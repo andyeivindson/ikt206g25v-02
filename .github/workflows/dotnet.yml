@@ -20,11 +20,14 @@ jobs:
         dotnet-version: '9.0.x'  # 👈 or '8.0.x' if you're using net8.0
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./StringLibrary.sln
+
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ./StringLibrary.sln --no-restore
+
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./StringLibrary.sln --no-build --verbosity normal
+
 
